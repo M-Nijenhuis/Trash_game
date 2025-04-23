@@ -1,0 +1,4 @@
+repository "Trash_game/Trash_game@9071777237860@cloud"
+  path "/"
+    br "/main"
+    co "/main"
