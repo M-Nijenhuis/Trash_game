@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class DragTrash : MonoBehaviour
 {
+    private GameManager gameManager;
     private bool isBeingDragged = false;
     private Camera cam;
     private MovingTrash movingTrash;
@@ -14,7 +15,7 @@ public class DragTrash : MonoBehaviour
     {
         cam = Camera.main;
         movingTrash = GetComponent<MovingTrash>();
-    }
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();    }
 
     private void Update()
     {
@@ -50,6 +51,7 @@ public class DragTrash : MonoBehaviour
         {   
             Debug.Log("The tag is good");
             Destroy(gameObject);
+            gameManager.IncreaseScore(1);
         }
         else
         {
